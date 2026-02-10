@@ -2,146 +2,101 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <title>公开一级白获取2026/2/10</title>
+    <title>公开一级白2026/2/10</title>
     <style>
-        /* 基础样式重置与背景设置 */
-        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #1a2a6c);
-            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            overflow: hidden;
-            position: relative;
-        }
-        /* 添加背景噪点效果 */
-        body::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.05 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
-            opacity: 0.15;
-            pointer-events: none;
-        }
-
-        /* 下载卡片容器 */
-        .download-card {
-            width: 320px;
-            padding: 40px 30px;
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
+            margin: 0;
+            color: #fff;
             text-align: center;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3),
-                        0 0 20px rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-            transform: translateY(0);
-            position: relative;
             overflow: hidden;
         }
-
-        /* 卡片悬停动画 */
-        .download-card:hover {
-            transform: translateY(-10px) scale(1.03);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4),
-                        0 0 30px rgba(0, 200, 255, 0.2);
-            background: rgba(255, 255, 255, 0.08);
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 50px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
         }
-
-        /* 光效动画 */
-        .download-card::after {
-            content: '';
-            position: absolute;
-            top: -50%; left: -50%;
-            width: 200%; height: 200%;
-            background: linear-gradient(
-                45deg, 
-                transparent, 
-                rgba(255, 255, 255, 0.1), 
-                transparent
-            );
-            transform: rotate(45deg);
-            transition: 0.5s;
-        }
-        .download-card:hover::after {
-            transform: rotate(45deg) translate(50%, 50%);
-        }
-
         h1 {
-            font-size: 28px;
-            margin-bottom: 15px;
-            background: linear-gradient(to right, #a8edea, #fed6e3, #fff);
-            -webkit-background-clip: text;
-            color: transparent;
+            margin-bottom: 20px;
+            font-size: 2.5em;
         }
-
         p {
-            color: #ddd; 
-            font-size: 14px; 
-            margin-bottom: 30px; 
-            line-height: 1.6;
+            margin-bottom: 30px;
+            font-size: 1.2em;
+            opacity: 0.9;
         }
-
-        /* 下载按钮样式 */
-        .download-btn {
-            display: inline-block;
+        .btn {
             padding: 15px 40px;
-            background: linear-gradient(45deg, #0099ff, #4bc0c8);
-            color: white;
+            font-size: 18px;
+            background: #fff;
+            color: #667eea;
             border: none;
             border-radius: 50px;
-            font-size: 16px;
-            font-weight: bold;
             cursor: pointer;
-            transition: 0.3s;
-            box-shadow: 0 4px 15px rgba(0, 153, 255, 0.4);
-            position: relative;
-            overflow: hidden;
-            text-decoration: none;
+            transition: all 0.3s;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
         }
-
-        .download-btn:hover {
+        .btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0, 153, 255, 0.6);
-        }
-
-        /* 图标动画 */
-        .download-btn::before {
-            content: '⬇️';
-            margin-right: 10px;
-            font-size: 18px;
-        }
-
-        .download-btn span {
-            opacity: 0;
-            position: absolute;
-            top: 50%; left: 50%;
-            transform: translate(-50%, -50%);
-            transition: 0.3s;
-        }
-
-        .download-btn:hover span {
-            opacity: 1;
-            font-size: 12px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+            background: #f0f0f0;
         }
     </style>
 </head>
 <body>
 
-    <div class="download-card">
-        <h1>获取txt文件</h1>
-        <p>点击下方按钮下载TXT文本文件。<br>里面有公开一级白账号密码。</p>
+<div class="container">
+    <h1>📥 公开一级白TXT 文件下载</h1>
+    <p>点击下方按钮，立即获取您的文件</p>
+    <!-- 关键修改点：使用 jsDelivr 链接 -->
+    <!-- 格式：https://cdn.jsdelivr.net/gh/你的用户名/仓库名@分支名/文件路径 -->
+    <!-- 请务必修改下面的链接为你自己的 GitHub 信息 -->
+    <a href="https://cdn.jsdelivr.net/gh/USERNAME/REPOSITORY@main/your-file.txt" 
+       download="自定义文件名.txt" 
+       class="btn" 
+       id="downloadLink">
+        点击下载
+    </a>
+</div>
+
+<script>
+    // 备用方案：如果 CDN 加载慢，或者想用 JS 强制下载
+    // 请将下面的链接换成你的文件在 GitHub raw 的链接
+    const githubRawUrl = "https://raw.githubusercontent.com/useranewrff/cs2/refs/heads/main/your-file.txt";
+    const targetFileName = "下载的文件.txt";
+
+    document.getElementById('downloadLink').addEventListener('click', function(e) {
+        // 阻止默认跳转，使用 fetch 下载
+        e.preventDefault();
         
-        <!-- 核心下载逻辑 -->
-        <!-- 注意：请确保 'your-file.txt' 文件与 HTML 文件在同一目录下，或填写正确的相对路径 -->
-        <a href="your-file.txt" download="下载资源.txt" class="download-btn">
-            立即下载
-            <span>文件格式: .txt | 大小: 自动识别</span>
-        </a>
-    </div>
+        fetch(githubRawUrl)
+            .then(response => response.blob())
+            .then(blob => {
+                const url = window.URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.style.display = 'none';
+                a.href = url;
+                a.download = targetFileName; // 指定下载的文件名
+                document.body.appendChild(a);
+                a.click();
+                window.URL.revokeObjectURL(url);
+                document.body.removeChild(a);
+            })
+            .catch(err => {
+                // 如果 fetch 失败（例如跨域或大文件），回退到直接跳转
+                alert("正在尝试直接下载...");
+                window.location.href = githubRawUrl;
+            });
+    });
+</script>
 
 </body>
 </html>
